@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "name": "spectra-payment-page",
+      "root": "apps/payment-page",
+      "buildCommand": "ng build --configuration production",
+      "outputDirectory": "dist/payment-page/browser",
+      "framework": "angular",
+      "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+    },
+    {
+      "name": "spectra-admin",
+      "root": "apps/admin",
+      "buildCommand": "ng build --configuration production",
+      "outputDirectory": "dist/admin/browser",
+      "framework": "angular",
+      "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+    }
+  ]
+}

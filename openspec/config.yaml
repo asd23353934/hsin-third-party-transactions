@@ -1,0 +1,61 @@
+schema: spec-driven
+
+context: |
+  ## 專案名稱
+  Spectra — 第三方交易系統（hsin-third-party-transactions）
+
+  ## Monorepo 結構
+  - apps/api          → Fastify 4 + TypeScript + Prisma (Clean Architecture)
+  - apps/payment-page → Angular 20 Standalone 付款頁面 (port 4200)
+  - apps/admin        → Angular 20 Standalone 後台管理 (port 4201)
+
+  ## Tech Stack
+  - Runtime: Node.js 22 LTS
+  - API Framework: Fastify 4
+  - Language: TypeScript 5.6
+  - ORM: Prisma 5 + PostgreSQL 16
+  - Validation: Zod
+  - Frontend: Angular 20 Standalone + PrimeNG 18 + Tailwind CSS 3
+  - UI Theme: PrimeNG Aura
+  - Notifications: Discord Webhook (native fetch, fire-and-forget)
+  - Package Manager: npm workspaces
+  - Deployment: API → Railway, Frontend → Vercel
+  - CI/CD: GitHub Actions (.github/workflows/ci.yml)
+
+  ## 付款閘道
+  - 綠界 ECPay (ecpay)
+  - 藍新 NewebPay (newebpay)
+
+  ## Clean Architecture 層次 (API)
+  - Domain:         src/domain/         純業務邏輯，不依賴框架
+  - Application:    src/application/    Use Cases + Repository/Notification/Gateway 介面
+  - Infrastructure: src/infrastructure/ Prisma repo、Discord Webhook、Gateway Adapters
+  - Presentation:   src/presentation/   Fastify Routes、Zod 驗證、Middleware
+
+  ## 命名規範
+  - 檔案: kebab-case (e.g., transaction.entity.ts)
+  - 類別: PascalCase
+  - Enum: EnumXxx { value = 'value' }
+  - Angular: standalone components, Signal-based state (signal/computed)
+  - Commits: (scope) type(subject): description
+
+  ## 交易狀態機
+  pending → processing → success → refunded
+                       → failed
+                       → timeout
+  pending → cancelled
+
+rules:
+  proposal:
+    - 使用繁體中文撰寫
+    - 包含目標、範圍、非目標、風險四個章節
+  specs:
+    - 每個 spec 對應一個功能模組
+    - 包含 API 契約定義與資料結構
+  design:
+    - 說明各層次的關係與資料流
+    - 包含 sequence diagram (文字版)
+  tasks:
+    - 每個 task 最多 2 小時可完成
+    - 包含驗收標準 (AC)
+    - 標注所屬的 app (api / payment-page / admin)

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" --help)",
+      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" init:*)",
+      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" instructions:*)",
+      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" new:*)",
+      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" analyze:*)"
+    ]
+  }
+}
