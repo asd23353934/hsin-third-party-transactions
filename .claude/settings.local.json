@@ -27,7 +27,16 @@
       "Bash(taskkill /F /IM node.exe /FI 'WINDOWTITLE eq *ng serve*')",
       "Bash(npx kill-port:*)",
       "Bash(tasklist)",
-      "Bash(railway --version)"
+      "Bash(railway --version)",
+      "Bash(node -e \"const l=require\\(''./package-lock.json''\\); console.log\\(''lockfileVersion:'', l.lockfileVersion\\); const pkgs=Object.keys\\(l.packages||{}\\).filter\\(k=>k.includes\\(''@hsin''\\)\\); console.log\\(''hsin packages:'', pkgs\\);\")",
+      "Bash(node -e \"const l=require\\(''./package-lock.json''\\); const adminPkg = l.packages[''node_modules/@hsin/admin'']; console.log\\(''admin entry:'', JSON.stringify\\(adminPkg, null, 2\\)\\);\")",
+      "Bash(node -e \"const p=require\\(''./package.json''\\); console.log\\(''workspaces:'', p.workspaces\\); console.log\\(''name:'', p.name\\); console.log\\(''version:'', p.version\\);\")",
+      "Bash(node -e \"const c=[]; process.stdin.on\\(''''data'''',d=>c.push\\(d\\)\\); process.stdin.on\\(''''end'''',\\(\\)=>{const p=JSON.parse\\(Buffer.concat\\(c\\)\\); console.log\\(''''api name:'''', p.name, ''''version:'''', p.version\\);}\\)\")",
+      "Bash(node -e \"const c=[]; process.stdin.on\\(''''data'''',d=>c.push\\(d\\)\\); process.stdin.on\\(''''end'''',\\(\\)=>{const p=JSON.parse\\(Buffer.concat\\(c\\)\\); console.log\\(''''admin name:'''', p.name, ''''version:'''', p.version\\);}\\)\")",
+      "Bash(node -e \"const l=require\\(''./package-lock.json''\\); const keys=Object.keys\\(l.packages\\).filter\\(k=>k.startsWith\\(''apps/''\\)\\); console.log\\(''apps/ entries:'', keys\\);\")",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"const l=require\\(''./package-lock.json''\\); console.log\\(''lockfileVersion:'', l.lockfileVersion\\); console.log\\(''npm version in lock file:'', l.lockfileVersion\\);\")",
+      "Bash(npm --version)"
     ]
   }
 }
