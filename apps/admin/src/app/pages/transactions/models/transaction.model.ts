@@ -47,7 +47,7 @@ export const STATUS_LABEL: Record<EnumTransactionStatus, string> = {
   [EnumTransactionStatus.refunded]:   '已退款',
 }
 
-export const STATUS_SEVERITY: Record<EnumTransactionStatus, string> = {
+export const STATUS_SEVERITY: Record<EnumTransactionStatus, 'success' | 'info' | 'warn' | 'danger' | 'secondary' | 'contrast'> = {
   [EnumTransactionStatus.pending]:    'warn',
   [EnumTransactionStatus.processing]: 'info',
   [EnumTransactionStatus.success]:    'success',

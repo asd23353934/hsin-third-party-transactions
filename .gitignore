@@ -1,5 +1,6 @@
 node_modules/
 dist/
+.angular/
 .env
 .env.local
 *.log
@@ -10,3 +11,4 @@ coverage/
 prisma/generated/
 .spectra/
 openspec/.vector-search.db*
+.claude/settings.local.json

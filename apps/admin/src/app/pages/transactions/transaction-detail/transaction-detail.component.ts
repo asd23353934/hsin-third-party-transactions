@@ -115,7 +115,7 @@ export class TransactionDetailComponent implements OnInit {
     return STATUS_LABEL[status] ?? status
   }
 
-  getStatusSeverity(status: EnumTransactionStatus): string {
+  getStatusSeverity(status: EnumTransactionStatus): 'success' | 'info' | 'warn' | 'danger' | 'secondary' | 'contrast' {
     return STATUS_SEVERITY[status] ?? 'info'
   }
 }

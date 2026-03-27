@@ -33,7 +33,7 @@ const start = async () => {
   try {
     await prisma.$connect()
     await app.listen({ port: env.PORT, host: '0.0.0.0' })
-    console.log(`🚀 Spectra API listening on port ${env.PORT}`)
+    console.log(`🚀 API listening on port ${env.PORT}`)
   } catch (err) {
     app.log.error(err)
     await prisma.$disconnect()

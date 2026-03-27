@@ -2,7 +2,7 @@ import { Component, OnInit, inject, signal } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 import { FormsModule } from '@angular/forms'
-import { TableModule } from 'primeng/table'
+import { TableModule, TablePageEvent } from 'primeng/table'
 import { TagModule } from 'primeng/tag'
 import { ButtonModule } from 'primeng/button'
 import { InputTextModule } from 'primeng/inputtext'
@@ -144,8 +144,9 @@ export class TransactionListComponent implements OnInit {
     this.state.changePage(1)
   }
 
-  onPageChange(event: { page: number }): void {
-    this.state.changePage(event.page + 1, {
+  onPageChange(event: TablePageEvent): void {
+    const page = event.first != null && event.rows ? Math.floor(event.first / event.rows) + 1 : 1
+    this.state.changePage(page, {
       ...(this.filterStatus  && { status:  this.filterStatus }),
       ...(this.filterGateway && { gateway: this.filterGateway }),
     })
@@ -155,7 +156,7 @@ export class TransactionListComponent implements OnInit {
     return STATUS_LABEL[status] ?? status
   }
 
-  getStatusSeverity(status: EnumTransactionStatus): string {
+  getStatusSeverity(status: EnumTransactionStatus): 'success' | 'info' | 'warn' | 'danger' | 'secondary' | 'contrast' {
     return STATUS_SEVERITY[status] ?? 'info'
   }
 }

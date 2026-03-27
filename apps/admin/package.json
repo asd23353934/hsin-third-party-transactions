@@ -1,5 +1,5 @@
 {
-  "name": "@spectra/admin",
+  "name": "@hsin/admin",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -16,7 +16,7 @@
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
     "@primeuix/themes": "^1.0.0",
-    "primeng": "^18.0.0",
+    "primeng": "^20.0.0",
     "primeicons": "^7.0.0"
   },
   "devDependencies": {
@@ -24,6 +24,6 @@
     "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^20.0.0",
     "tailwindcss": "^3.4.0",
-    "typescript": "~5.5.0"
+    "typescript": "~5.8.0"
   }
 }

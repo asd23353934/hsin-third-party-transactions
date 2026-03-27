@@ -4,6 +4,7 @@ import { ITransactionRepository } from '../../interfaces/transaction.repository.
 import { INotificationService } from '../../interfaces/notification.service.interface.js'
 import { IPaymentGateway } from '../../interfaces/payment-gateway.interface.js'
 import { HandlePaymentCallbackDto } from './handle-payment-callback.dto.js'
+import { EnumTransactionStatus } from '../../../domain/transaction/transaction.entity.js'
 
 export class HandlePaymentCallbackUseCase {
   constructor(
@@ -27,11 +28,17 @@ export class HandlePaymentCallbackUseCase {
       return err(new InvalidSignatureError())
     }
 
-    // 3. Load transaction
-    const tx = await this.txRepo.findByOrderRef(callbackResult.orderRef)
-    if (!tx) return err(new TransactionNotFoundError(callbackResult.orderRef))
+    // 3. Load transaction — use transactionId (CustomField1) for lookup
+    const tx = await this.txRepo.findById(callbackResult.transactionId)
+    if (!tx) return err(new TransactionNotFoundError(callbackResult.transactionId))
 
     // 4. Transition state
+    // Gateway callbacks arrive while tx is still pending — auto-advance through processing
+    if (tx.status === EnumTransactionStatus.pending) {
+      const r = tx.markProcessing()
+      if (!r.ok) return err(r.error)
+    }
+
     if (callbackResult.success) {
       const transitionResult = tx.markSuccess(callbackResult.gatewayRef)
       if (!transitionResult.ok) return err(transitionResult.error)

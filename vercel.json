@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "name": "spectra-payment-page",
+      "name": "hsin-payment-page",
       "root": "apps/payment-page",
       "buildCommand": "ng build --configuration production",
       "outputDirectory": "dist/payment-page/browser",
@@ -9,7 +9,7 @@
       "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
     },
     {
-      "name": "spectra-admin",
+      "name": "hsin-admin",
       "root": "apps/admin",
       "buildCommand": "ng build --configuration production",
       "outputDirectory": "dist/admin/browser",

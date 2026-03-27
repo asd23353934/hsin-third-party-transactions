@@ -1,5 +1,5 @@
 {
-  "name": "spectra",
+  "name": "hsin-third-party-transactions",
   "private": true,
   "workspaces": [
     "apps/api",

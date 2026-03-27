@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  order_ref   String   @unique
+  amount      Decimal  @db.Decimal(12, 2)
+  currency    String   @default("TWD") @db.VarChar(3)
+  status      String
+  gateway     String
+  description String?
+  gateway_ref String?
+  metadata    Json?
+  callback_at DateTime?
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  payment_callbacks PaymentCallback[]
+
+  @@index([status])
+  @@index([gateway])
+  @@index([created_at])
+}
+
+model PaymentCallback {
+  id             String   @id @default(cuid())
+  transaction_id String
+  raw_payload    Json
+  gateway        String
+  processed      Boolean  @default(false)
+  received_at    DateTime @default(now())
+
+  transaction Transaction @relation(fields: [transaction_id], references: [id])
+
+  @@index([transaction_id])
+}

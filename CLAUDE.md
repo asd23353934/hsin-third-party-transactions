@@ -25,3 +25,12 @@ discuss? → propose → apply ⇄ ingest → archive
 Changes can be parked（暫存）— temporarily moved out of `openspec/changes/`. Parked changes won't appear in `spectra list` but can be found with `spectra list --parked`. To restore: `spectra unpark <name>`. The `/spectra:apply` and `/spectra:ingest` skills handle parked changes automatically.
 
 <!-- SPECTRA:END -->
+
+# 專案規範
+
+## 語言
+
+- 所有回覆、說明、建議一律使用**繁體中文**
+- Commit 訊息一律使用**繁體中文**，格式：`類型: 簡短說明`
+  - 類型範例：`新增`、`修正`、`重構`、`設定`、`文件`
+  - 範例：`修正: 回調處理自動推進 pending→processing 狀態`

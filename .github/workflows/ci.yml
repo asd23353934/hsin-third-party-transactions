@@ -136,7 +136,7 @@ jobs:
     needs: [build-api]
     environment:
       name: production
-      url: https://spectra-api.railway.app
+      url: ${{ vars.RAILWAY_URL }}
     steps:
       - uses: actions/checkout@v4
 
@@ -144,6 +144,6 @@ jobs:
         run: npm install -g @railway/cli
 
       - name: Deploy to Railway
-        run: railway up --service spectra-api --detach
+        run: railway up --service api --detach
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

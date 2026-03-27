@@ -25,7 +25,7 @@ const GATEWAY_LABELS: Record<string, string> = {
 
 export function buildSuccessWebhookBody(event: TransactionSucceededEvent): DiscordWebhookBody {
   return {
-    username: 'Spectra 交易通知',
+    username: '交易通知',
     embeds: [
       {
         title:       '✅ 交易成功',
@@ -37,7 +37,7 @@ export function buildSuccessWebhookBody(event: TransactionSucceededEvent): Disco
           { name: '付款方式',   value: GATEWAY_LABELS[event.gateway] ?? event.gateway, inline: true },
           { name: '閘道參考',   value: `\`${event.gatewayRef}\``,                     inline: false },
         ],
-        footer:    { text: 'Spectra Payment System' },
+        footer:    { text: 'Payment System' },
         timestamp: event.occurredAt.toISOString(),
       },
     ],
@@ -46,7 +46,7 @@ export function buildSuccessWebhookBody(event: TransactionSucceededEvent): Disco
 
 export function buildFailureWebhookBody(event: TransactionFailedEvent): DiscordWebhookBody {
   return {
-    username: 'Spectra 交易通知',
+    username: '交易通知',
     embeds: [
       {
         title:       '❌ 交易失敗',
@@ -58,7 +58,7 @@ export function buildFailureWebhookBody(event: TransactionFailedEvent): DiscordW
           { name: '付款方式', value: GATEWAY_LABELS[event.gateway] ?? event.gateway,  inline: true },
           { name: '失敗原因', value: event.reason,                                    inline: false },
         ],
-        footer:    { text: 'Spectra Payment System' },
+        footer:    { text: 'Payment System' },
         timestamp: event.occurredAt.toISOString(),
       },
     ],

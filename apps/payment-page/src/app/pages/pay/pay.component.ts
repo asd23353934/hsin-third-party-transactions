@@ -25,7 +25,7 @@ import { environment } from '../../../environments/environment'
 
         <!-- Header -->
         <div class="text-center mb-8">
-          <h1 class="text-3xl font-bold text-gray-900">Spectra 付款</h1>
+          <h1 class="text-3xl font-bold text-gray-900">線上付款</h1>
           <p class="text-gray-500 mt-1">安全快速的付款體驗</p>
         </div>
 

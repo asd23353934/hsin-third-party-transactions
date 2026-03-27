@@ -27,7 +27,7 @@ export class EcpayAdapter implements IPaymentGateway {
 
     const formData: Record<string, string> = {
       MerchantID:        merchantId,
-      MerchantTradeNo:   params.orderRef.slice(0, 20),
+      MerchantTradeNo:   params.transactionId.replace(/-/g, '').slice(0, 20),
       MerchantTradeDate: tradeDate,
       PaymentType:       'aio',
       TotalAmount:       Math.round(params.amount).toString(),

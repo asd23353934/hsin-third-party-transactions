@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
   apiUrl:     'http://localhost:3000',
-  apiKey:     'dev-api-key',
+  apiKey:     'spectra-dev-secret-key-2026',
 }

@@ -5,6 +5,7 @@
     "module": "ESNext",
     "outDir": "./dist",
     "rootDir": "./src",
+    "baseUrl": ".",
     "paths": {
       "@domain/*": ["src/domain/*"],
       "@application/*": ["src/application/*"],
