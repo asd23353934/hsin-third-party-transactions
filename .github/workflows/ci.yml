@@ -134,22 +134,4 @@ jobs:
           path: apps/admin/dist/
           retention-days: 1
 
-  # ── Deploy API → Railway ───────────────────────────────────────────────────
-  deploy-api:
-    name: Deploy API → Railway
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    needs: [build-api]
-    environment:
-      name: production
-      url: ${{ vars.RAILWAY_URL }}
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Railway CLI
-        run: npm install -g @railway/cli
-
-      - name: Deploy to Railway
-        run: railway up --service api --detach
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+  # Railway 透過 GitHub webhook 自動偵測 push 並部署，無需在 CI 中執行 railway up
