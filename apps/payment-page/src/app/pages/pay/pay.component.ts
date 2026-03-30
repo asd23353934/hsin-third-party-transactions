@@ -130,7 +130,7 @@ export class PayComponent {
         currency:    'TWD',
         gateway:     this.gateway,
         description: this.description,
-        returnUrl:   `${environment.baseUrl}/result?orderRef=${orderRef}`,
+        returnUrl:   `${environment.apiUrl}/api/result/${this.gateway}`,
         notifyUrl:   `${environment.apiUrl}/api/callback/${this.gateway}`,
       })
       .subscribe({

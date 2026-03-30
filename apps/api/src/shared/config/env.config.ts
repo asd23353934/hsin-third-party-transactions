@@ -6,6 +6,7 @@ const EnvSchema = z.object({
   DATABASE_URL: z.string().url(),
 
   ALLOWED_ORIGINS: z.string().default('http://localhost:4200'),
+  FRONTEND_URL:    z.string().url().default('http://localhost:4200'),
   API_SECRET_KEY:  z.string().min(16),
 
   DISCORD_WEBHOOK_URL_SUCCESS: z.string().url(),

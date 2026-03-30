@@ -7,6 +7,7 @@ import { errorHandler } from './shared/errors/error-handler.js'
 import { healthRoutes } from './presentation/routes/health.routes.js'
 import { transactionRoutes } from './presentation/routes/transaction.routes.js'
 import { callbackRoutes } from './presentation/routes/callback.routes.js'
+import { resultRoutes } from './presentation/routes/result.routes.js'
 
 const env    = getEnv()
 const prisma = new PrismaClient()
@@ -40,6 +41,7 @@ app.setErrorHandler(errorHandler)
 await app.register(healthRoutes)
 await app.register(transactionRoutes, { prisma })
 await app.register(callbackRoutes,    { prisma })
+await app.register(resultRoutes)
 
 // ── Start ──────────────────────────────────────────────────────────────────
 const start = async () => {
