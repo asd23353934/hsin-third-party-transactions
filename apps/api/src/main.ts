@@ -1,5 +1,6 @@
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
+import formbody from '@fastify/formbody'
 import sensible from '@fastify/sensible'
 import { PrismaClient } from '@prisma/client'
 import { getEnv } from './shared/config/env.config.js'
@@ -18,6 +19,7 @@ await app.register(cors, {
   origin: env.ALLOWED_ORIGINS.split(','),
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 })
+await app.register(formbody)
 await app.register(sensible)
 
 // ── Error handler ─────────────────────────────────────────────────────────
