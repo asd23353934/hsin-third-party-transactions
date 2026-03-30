@@ -47,7 +47,7 @@
 - [x] 6.3 執行 `ng serve`，確認 `http://localhost:4200` 顯示付款表單
 - [x] 6.4 驗證 payment form allows amount, description, and gateway selection：填寫表單後「前往付款」按鈕啟用
 - [x] 6.5 驗證 submit button is disabled when required fields are empty：清空金額或說明，確認按鈕變灰
-- [ ] 6.6 測試 payment form submission calls the API and redirects：完整流程測試，確認成功跳轉閘道
+- [x] 6.6 測試 payment form submission calls the API and redirects：完整流程測試，確認成功跳轉閘道
 - [x] 6.7 確認 result page shows success or failure state：直接訪問 `/result?RtnCode=1` 顯示成功畫面
 - [x] 6.8 確認 SSL security indicator is visible：頁面下方顯示鎖頭圖示與「SSL 加密保護」文字
 
@@ -84,6 +84,6 @@
 ## 10. CI/CD 驗證 (CI/CD Verification)
 
 - [x] 10.1 確認 `.github/workflows/ci.yml` 存在且 GitHub Actions runs lint, test, and build on master branch（Railway 透過 GitHub webhook 自動部署，無需 RAILWAY_TOKEN）
-- [ ] 10.2 推送一個 commit 至 `master`，確認 pipeline 成功跑完 lint → test → build 三個 stage
+- [x] 10.2 推送一個 commit 至 `master`，確認 pipeline 成功跑完 lint → test → build 三個 stage
 - [x] 10.3 確認 build artifacts are passed to deploy stage（GitHub Actions `upload-artifact` / `download-artifact` 設定正確）
 - [x] 10.4 確認 `.gitignore` excludes .env files（執行 `git status` 不應看到 `.env` 出現在 untracked files）

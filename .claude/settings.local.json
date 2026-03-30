@@ -35,7 +35,14 @@
       "Bash(curl -s --ssl-no-revoke -X POST https://hsinapi-production.up.railway.app/api/transactions -H \"Content-Type: application/json\" -H \"X-Api-Key: 0txtVLjCeYnsTGVL\" -d \"{\"\"orderRef\"\":\"\"PROD-TEST-001\"\",\"\"amount\"\":30,\"\"currency\"\":\"\"TWD\"\",\"\"gateway\"\":\"\"ecpay\"\",\"\"description\"\":\"\"正式環境測試\"\"}\")",
       "Bash(curl -s --ssl-no-revoke -X POST \"https://hsinapi-production.up.railway.app/api/transactions\" -H \"Content-Type: application/json\" -H \"X-Api-Key: 0txtVLjCeYnsTGVL\" -d \"{\"\"orderRef\"\":\"\"PROD-TEST-001\"\",\"\"amount\"\":30,\"\"currency\"\":\"\"TWD\"\",\"\"gateway\"\":\"\"ecpay\"\",\"\"description\"\":\"\"test\"\"}\")",
       "Bash(curl -s --ssl-no-revoke -X POST \"https://hsinapi-production.up.railway.app/api/transactions\" -H \"Content-Type: application/json\" -H \"X-Api-Key: 0txtVLjCeYnsTGVL\" -d \"{\"\"orderRef\"\":\"\"PROD-TEST-001\"\",\"\"amount\"\":30,\"\"currency\"\":\"\"TWD\"\",\"\"gateway\"\":\"\"ecpay\"\",\"\"description\"\":\"\"test\"\",\"\"returnUrl\"\":\"\"https://payment-page-bay.vercel.app/result\"\",\"\"notifyUrl\"\":\"\"https://hsinapi-production.up.railway.app/api/callback/ecpay\"\"}\")",
-      "Bash(xargs grep:*)"
+      "Bash(xargs grep:*)",
+      "WebFetch(domain:hsinapi-production.up.railway.app)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} -> %{redirect_url}\" -X POST \"https://hsinapi-production.up.railway.app/api/result/ecpay\" -d \"RtnCode=1&RtnMsg=交易成功&MerchantTradeNo=ORD12345&TradeNo=2024010112345\")",
+      "Bash(curl -sk -o /dev/null -w \"%{http_code} -> %{redirect_url}\" -X POST \"https://hsinapi-production.up.railway.app/api/result/ecpay\" --data \"RtnCode=1&RtnMsg=OK&MerchantTradeNo=ORD12345\" -H \"Content-Type: application/x-www-form-urlencoded\")",
+      "WebFetch(domain:payment-page-bay.vercel.app)",
+      "Bash(curl -sk -X POST \"https://hsinapi-production.up.railway.app/api/transactions\" -H \"Content-Type: application/json\" -H \"X-Api-Key: 0txtVLjCeYnsTGVL\" -d \"{\"\"orderRef\"\":\"\"DEBUG-003\"\",\"\"amount\"\":100,\"\"currency\"\":\"\"TWD\"\",\"\"gateway\"\":\"\"ecpay\"\",\"\"description\"\":\"\"Test\"\",\"\"returnUrl\"\":\"\"https://hsinapi-production.up.railway.app/api/result/ecpay\"\",\"\"notifyUrl\"\":\"\"https://hsinapi-production.up.railway.app/api/callback/ecpay\"\"}\")",
+      "Bash(gh run:*)",
+      "WebFetch(domain:github.com)"
     ]
   }
 }
