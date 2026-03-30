@@ -83,7 +83,7 @@
 
 ## 10. CI/CD 驗證 (CI/CD Verification)
 
-- [ ] 10.1 確認 `.github/workflows/ci.yml` 存在且 GitHub Actions runs lint, test, and build on main branch；並在 GitHub Repo → Settings → Secrets → Actions 新增 `RAILWAY_TOKEN`
-- [ ] 10.2 推送一個 commit 至 `main`，確認 pipeline 成功跑完 lint → test → build 三個 stage
-- [ ] 10.3 確認 build artifacts are passed to deploy stage（GitHub Actions `upload-artifact` / `download-artifact` 設定正確）
-- [ ] 10.4 確認 `.gitignore` excludes .env files（執行 `git status` 不應看到 `.env` 出現在 untracked files）
+- [x] 10.1 確認 `.github/workflows/ci.yml` 存在且 GitHub Actions runs lint, test, and build on master branch（Railway 透過 GitHub webhook 自動部署，無需 RAILWAY_TOKEN）
+- [ ] 10.2 推送一個 commit 至 `master`，確認 pipeline 成功跑完 lint → test → build 三個 stage
+- [x] 10.3 確認 build artifacts are passed to deploy stage（GitHub Actions `upload-artifact` / `download-artifact` 設定正確）
+- [x] 10.4 確認 `.gitignore` excludes .env files（執行 `git status` 不應看到 `.env` 出現在 untracked files）
