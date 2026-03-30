@@ -34,7 +34,8 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" --ssl-no-revoke \"https://admin-zeta-livid.vercel.app/transactions\")",
       "Bash(curl -s --ssl-no-revoke -X POST https://hsinapi-production.up.railway.app/api/transactions -H \"Content-Type: application/json\" -H \"X-Api-Key: 0txtVLjCeYnsTGVL\" -d \"{\"\"orderRef\"\":\"\"PROD-TEST-001\"\",\"\"amount\"\":30,\"\"currency\"\":\"\"TWD\"\",\"\"gateway\"\":\"\"ecpay\"\",\"\"description\"\":\"\"正式環境測試\"\"}\")",
       "Bash(curl -s --ssl-no-revoke -X POST \"https://hsinapi-production.up.railway.app/api/transactions\" -H \"Content-Type: application/json\" -H \"X-Api-Key: 0txtVLjCeYnsTGVL\" -d \"{\"\"orderRef\"\":\"\"PROD-TEST-001\"\",\"\"amount\"\":30,\"\"currency\"\":\"\"TWD\"\",\"\"gateway\"\":\"\"ecpay\"\",\"\"description\"\":\"\"test\"\"}\")",
-      "Bash(curl -s --ssl-no-revoke -X POST \"https://hsinapi-production.up.railway.app/api/transactions\" -H \"Content-Type: application/json\" -H \"X-Api-Key: 0txtVLjCeYnsTGVL\" -d \"{\"\"orderRef\"\":\"\"PROD-TEST-001\"\",\"\"amount\"\":30,\"\"currency\"\":\"\"TWD\"\",\"\"gateway\"\":\"\"ecpay\"\",\"\"description\"\":\"\"test\"\",\"\"returnUrl\"\":\"\"https://payment-page-bay.vercel.app/result\"\",\"\"notifyUrl\"\":\"\"https://hsinapi-production.up.railway.app/api/callback/ecpay\"\"}\")"
+      "Bash(curl -s --ssl-no-revoke -X POST \"https://hsinapi-production.up.railway.app/api/transactions\" -H \"Content-Type: application/json\" -H \"X-Api-Key: 0txtVLjCeYnsTGVL\" -d \"{\"\"orderRef\"\":\"\"PROD-TEST-001\"\",\"\"amount\"\":30,\"\"currency\"\":\"\"TWD\"\",\"\"gateway\"\":\"\"ecpay\"\",\"\"description\"\":\"\"test\"\",\"\"returnUrl\"\":\"\"https://payment-page-bay.vercel.app/result\"\",\"\"notifyUrl\"\":\"\"https://hsinapi-production.up.railway.app/api/callback/ecpay\"\"}\")",
+      "Bash(xargs grep:*)"
     ]
   }
 }
