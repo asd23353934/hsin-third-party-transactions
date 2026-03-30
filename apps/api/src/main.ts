@@ -1,6 +1,5 @@
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
-import formbody from '@fastify/formbody'
 import sensible from '@fastify/sensible'
 import { PrismaClient } from '@prisma/client'
 import { getEnv } from './shared/config/env.config.js'
@@ -19,8 +18,20 @@ await app.register(cors, {
   origin: env.ALLOWED_ORIGINS.split(','),
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 })
-await app.register(formbody)
 await app.register(sensible)
+
+// 解析 ECPay / NewebPay callback 的 application/x-www-form-urlencoded
+app.addContentTypeParser(
+  'application/x-www-form-urlencoded',
+  { parseAs: 'string' },
+  (_req, body, done) => {
+    try {
+      done(null, Object.fromEntries(new URLSearchParams(body as string)))
+    } catch (err) {
+      done(err as Error, undefined)
+    }
+  },
+)
 
 // ── Error handler ─────────────────────────────────────────────────────────
 app.setErrorHandler(errorHandler)
