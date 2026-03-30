@@ -10,7 +10,7 @@
 - [x] 2.1 在根目錄執行 `npm install`（Monorepo 使用 npm workspaces，一次安裝三個 apps 的依賴）
 - [x] 2.2 執行 `npx prisma generate` 生成 Prisma Client
 - [x] 2.3 執行 `npx prisma migrate dev --name init` 建立 Transaction entity 及 PaymentCallback 資料表
-- [x] 2.4 執行 `npm run dev` 啟動 API，確認終端出現 `🚀 Spectra API listening on port 3000`
+- [x] 2.4 執行 `npm run dev` 啟動 API，確認終端出現 `🚀 API listening on port 3000`
 - [x] 2.5 驗證 API health check 端點：`curl http://localhost:3000/health` 回傳 `{ "status": "ok" }`
 
 ## 3. 核心邏輯驗證 (Core Logic Verification)

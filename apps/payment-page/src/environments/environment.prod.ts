@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl:     'https://spectra-api.railway.app',
-  baseUrl:    'https://spectra-pay.vercel.app',
+  apiUrl:     'https://hsin-api.railway.app',
+  baseUrl:    'https://hsin-pay.vercel.app',
   apiKey:     '',
 }

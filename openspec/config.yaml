@@ -2,7 +2,7 @@ schema: spec-driven
 
 context: |
   ## 專案名稱
-  Spectra — 第三方交易系統（hsin-third-party-transactions）
+  第三方交易系統（hsin-third-party-transactions）
 
   ## Monorepo 結構
   - apps/api          → Fastify 4 + TypeScript + Prisma (Clean Architecture)

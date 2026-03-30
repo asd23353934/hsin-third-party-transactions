@@ -1,43 +1,27 @@
 {
   "permissions": {
     "allow": [
-      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" --help)",
-      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" init:*)",
-      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" instructions:*)",
-      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" new:*)",
-      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" analyze:*)",
       "Bash(npm install:*)",
       "Bash(ng version:*)",
-      "Bash(\"C:/Users/user/AppData/Local/Spectra/spectra.exe\" in-progress:*)",
       "Bash(docker compose:*)",
       "Bash(npm show:*)",
       "Bash(npx prisma:*)",
       "Bash(docker exec:*)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" -X POST \"https://discord.com/api/webhooks/1486969043964530728/dvh1v2efKonTnah_iVvhLK48l5n7aBAaRzcckkMPz-QmCBT5q6OxrD7_udKvwUkPZqzG\" -H \"Content-Type: application/json\" -d '{:*)",
-      "Bash(curl -v -X POST \"https://discord.com/api/webhooks/1486969043964530728/dvh1v2efKonTnah_iVvhLK48l5n7aBAaRzcckkMPz-QmCBT5q6OxrD7_udKvwUkPZqzG\" -H \"Content-Type: application/json\" -d \"{\"\"content\"\": \"\"🧪 Spectra Webhook 測試\"\"}\")",
       "Bash(curl -s http://localhost:3000/health)",
-      "Bash(curl -s -X POST http://localhost:3000/api/transactions -H \"Content-Type: application/json\" -H \"X-Api-Key: spectra-dev-secret-key-2026\" -d @/tmp/create_tx.json)",
-      "Bash(node -e \"const d=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); const r=d.data; console.log\\(''''total:'''',r.total,''''page:'''',r.page\\); r.data.forEach\\(t=>console.log\\('''' -'''',t.orderRef,''''|'''',t.status\\)\\)\" __NEW_LINE_0e35d6d394705ecf__ echo \"\" echo \"=== 3.7 單筆詳情 ===\" TX_ID=\"d8ad6e3b-60f4-4e7c-8278-65a7b1155a2a\" curl -s \"http://localhost:3000/api/transactions/$TX_ID\" -H \"X-Api-Key: spectra-dev-secret-key-2026\")",
-      "Bash(node -e \"const d=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); const t=d.data; console.log\\(''''id:'''',t.id,''''\\\\norderRef:'''',t.orderRef,''''\\\\nstatus:'''',t.status,''''\\\\ngatewayRef:'''',t.gatewayRef\\)\" __NEW_LINE_0e35d6d394705ecf__ echo \"\" echo \"=== 3.8 不存在的 id（應 404）===\" curl -s -w \"\\\\nHTTP: %{http_code}\" \"http://localhost:3000/api/transactions/not-exist-id\" -H \"X-Api-Key: spectra-dev-secret-key-2026\")",
-      "Bash(curl -s http://localhost:3000/api/transactions/826af24c-2c97-4e5a-9441-6bafba7c2c51 -H \"X-Api-Key: spectra-dev-secret-key-2026\")",
+      "Bash(curl -s -X POST http://localhost:3000/api/transactions:*)",
+      "Bash(curl -s http://localhost:3000/api/transactions:*)",
       "Bash(python -m json.tool)",
-      "Bash(curl -s http://localhost:3000/api/transactions/826af24c-2c97-4e5a-9441-6bafba7c2c51 -H 'X-Api-Key: spectra-dev-secret-key-2026')",
       "Bash(node_modules/.bin/ng version:*)",
       "Bash(npx ng:*)",
       "Bash(taskkill /F /IM node.exe /FI 'WINDOWTITLE eq *ng serve*')",
       "Bash(npx kill-port:*)",
       "Bash(tasklist)",
       "Bash(railway --version)",
-      "Bash(node -e \"const l=require\\(''./package-lock.json''\\); console.log\\(''lockfileVersion:'', l.lockfileVersion\\); const pkgs=Object.keys\\(l.packages||{}\\).filter\\(k=>k.includes\\(''@hsin''\\)\\); console.log\\(''hsin packages:'', pkgs\\);\")",
-      "Bash(node -e \"const l=require\\(''./package-lock.json''\\); const adminPkg = l.packages[''node_modules/@hsin/admin'']; console.log\\(''admin entry:'', JSON.stringify\\(adminPkg, null, 2\\)\\);\")",
-      "Bash(node -e \"const p=require\\(''./package.json''\\); console.log\\(''workspaces:'', p.workspaces\\); console.log\\(''name:'', p.name\\); console.log\\(''version:'', p.version\\);\")",
-      "Bash(node -e \"const c=[]; process.stdin.on\\(''''data'''',d=>c.push\\(d\\)\\); process.stdin.on\\(''''end'''',\\(\\)=>{const p=JSON.parse\\(Buffer.concat\\(c\\)\\); console.log\\(''''api name:'''', p.name, ''''version:'''', p.version\\);}\\)\")",
-      "Bash(node -e \"const c=[]; process.stdin.on\\(''''data'''',d=>c.push\\(d\\)\\); process.stdin.on\\(''''end'''',\\(\\)=>{const p=JSON.parse\\(Buffer.concat\\(c\\)\\); console.log\\(''''admin name:'''', p.name, ''''version:'''', p.version\\);}\\)\")",
-      "Bash(node -e \"const l=require\\(''./package-lock.json''\\); const keys=Object.keys\\(l.packages\\).filter\\(k=>k.startsWith\\(''apps/''\\)\\); console.log\\(''apps/ entries:'', keys\\);\")",
       "Bash(node -e \":*)",
-      "Bash(node -e \"const l=require\\(''./package-lock.json''\\); console.log\\(''lockfileVersion:'', l.lockfileVersion\\); console.log\\(''npm version in lock file:'', l.lockfileVersion\\);\")",
       "Bash(npm --version)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(powershell -Command \":*)"
     ]
   }
 }

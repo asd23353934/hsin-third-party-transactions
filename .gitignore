@@ -9,6 +9,5 @@ dist/
 .vscode/
 coverage/
 prisma/generated/
-.spectra/
 openspec/.vector-search.db*
 .claude/settings.local.json

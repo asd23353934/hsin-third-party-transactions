@@ -1,9 +1,9 @@
-# Spectra — 第三方交易系統
+# 第三方交易系統
 
 ## 架構概覽
 
 ```
-spectra/
+hsin-third-party-transactions/
 ├── apps/
 │   ├── api/              # Fastify + TypeScript + Prisma (Clean Architecture)
 │   ├── payment-page/     # Angular 20 付款頁面 (公開)

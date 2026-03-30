@@ -1,16 +1,16 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: spectra-db
+    container_name: hsin-db
     restart: unless-stopped
     environment:
-      POSTGRES_USER: spectra
-      POSTGRES_PASSWORD: spectra_dev
-      POSTGRES_DB: spectra_db
+      POSTGRES_USER: hsin
+      POSTGRES_PASSWORD: hsin_dev
+      POSTGRES_DB: hsin_db
     ports:
       - "5432:5432"
     volumes:
-      - spectra_pgdata:/var/lib/postgresql/data
+      - hsin_pgdata:/var/lib/postgresql/data
 
 volumes:
-  spectra_pgdata:
+  hsin_pgdata:
