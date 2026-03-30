@@ -69,17 +69,17 @@
 - [x] 8.4 在 Railway 環境變數設定所有 `.env.example` 中的值（all sensitive values are stored as environment variables）
 - [x] 8.5 確認 `apps/api/railway.json` 的 build/start command 正確（API is deployable to Railway）
 - [x] 8.6 推送至 `main` 分支觸發部署，確認 database migrations run automatically on deploy
-- [ ] 8.7 訪問 Railway 提供的 URL + `/health`，確認 API health check responds to Railway probes
+- [x] 8.7 訪問 Railway 提供的 URL + `/health`，確認 API health check responds to Railway probes
 
 ## 9. 部署 — 前端到 Vercel (Frontend Deployment)
 
-- [ ] 9.1 安裝 Vercel CLI：`npm install -g vercel`，執行 `vercel login`
+- [x] 9.1 安裝 Vercel CLI：`npm install -g vercel`，執行 `vercel login`
 - [x] 9.2 在 `apps/payment-page/src/environments/environment.prod.ts` 更新 `apiUrl` 為 Railway URL
 - [x] 9.3 在 `apps/admin/src/environments/environment.prod.ts` 更新 `apiUrl` 為 Railway URL
-- [ ] 9.4 執行 `vercel --cwd apps/payment-page --prod`，確認 frontend apps are deployable to Vercel
-- [ ] 9.5 執行 `vercel --cwd apps/admin --prod`
-- [ ] 9.6 確認 SPA routing is handled by rewrites：直接訪問 `https://<domain>/result` 不出現 404
-- [ ] 9.7 在正式環境完整測試一筆付款流程，確認 Discord 通知正常送達
+- [x] 9.4 執行 `vercel --cwd apps/payment-page --prod`，確認 frontend apps are deployable to Vercel
+- [x] 9.5 執行 `vercel --cwd apps/admin --prod`
+- [x] 9.6 確認 SPA routing is handled by rewrites：直接訪問 `https://<domain>/result` 不出現 404
+- [x] 9.7 在正式環境完整測試一筆付款流程，確認 Discord 通知正常送達
 
 ## 10. CI/CD 驗證 (CI/CD Verification)
 
