@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, Prisma } from '@prisma/client'
 import { Transaction, EnumTransactionStatus, EnumPaymentGateway } from '../../../domain/transaction/transaction.entity.js'
 import { TransactionId, Money, OrderRef } from '../../../domain/transaction/transaction.value-objects.js'
 import {
@@ -100,7 +100,9 @@ export class PrismaTransactionRepository implements ITransactionRepository {
       gateway:     tx.gateway,
       description: tx.description ?? null,
       gateway_ref: tx.gatewayRef  ?? null,
-      metadata:    tx.metadata    ?? null,
+      metadata:    tx.metadata !== undefined
+        ? (tx.metadata as Prisma.InputJsonValue)
+        : Prisma.DbNull,
       callback_at: tx.callbackAt  ?? null,
       updated_at:  tx.updatedAt,
     }

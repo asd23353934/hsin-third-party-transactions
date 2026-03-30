@@ -36,7 +36,8 @@
       "Bash(node -e \"const l=require\\(''./package-lock.json''\\); const keys=Object.keys\\(l.packages\\).filter\\(k=>k.startsWith\\(''apps/''\\)\\); console.log\\(''apps/ entries:'', keys\\);\")",
       "Bash(node -e \":*)",
       "Bash(node -e \"const l=require\\(''./package-lock.json''\\); console.log\\(''lockfileVersion:'', l.lockfileVersion\\); console.log\\(''npm version in lock file:'', l.lockfileVersion\\);\")",
-      "Bash(npm --version)"
+      "Bash(npm --version)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

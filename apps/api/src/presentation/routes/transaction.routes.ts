@@ -58,6 +58,7 @@ export async function transactionRoutes(
       }
 
       const result = await listUseCase.execute(parse.data)
+      if (!result.ok) return reply.status(500).send({ statusCode: 500, error: 'INTERNAL_ERROR' })
       return reply.send({ data: result.value })
     },
   )
@@ -74,7 +75,7 @@ export async function transactionRoutes(
         if (result.error instanceof TransactionNotFoundError) {
           return reply.status(404).send({ statusCode: 404, error: 'NOT_FOUND', message: result.error.message })
         }
-        return reply.status(500).send({ statusCode: 500, message: result.error.message })
+        return reply.status(500).send({ statusCode: 500, message: 'Internal server error' })
       }
 
       return reply.send({ data: result.value })
