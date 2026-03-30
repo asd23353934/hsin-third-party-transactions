@@ -21,7 +21,15 @@
       "Bash(node -e \":*)",
       "Bash(npm --version)",
       "Bash(npx tsc:*)",
-      "Bash(powershell -Command \":*)"
+      "Bash(powershell -Command \":*)",
+      "Bash(curl -s https://hsinapi-production.up.railway.app/health)",
+      "Bash(curl -s --ssl-no-revoke https://hsinapi-production.up.railway.app/health)",
+      "Bash(vercel --version)",
+      "Bash(vercel --cwd apps/payment-page --prod --yes)",
+      "Bash(vercel --cwd apps/payment-page --prod --yes --scope asd23353934s-projects)",
+      "Bash(del \"C:\\\\Users\\\\user\\\\Desktop\\\\gitlab\\\\hsin-third-party-transactions\\\\vercel.json\")",
+      "Bash(powershell -Command \"Remove-Item ''C:\\\\Users\\\\user\\\\Desktop\\\\gitlab\\\\hsin-third-party-transactions\\\\vercel.json''; Write-Host ''已刪除''\")",
+      "Bash(vercel deploy:*)"
     ]
   }
 }

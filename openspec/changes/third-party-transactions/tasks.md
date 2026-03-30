@@ -64,18 +64,18 @@
 ## 8. 部署 — API to Railway (API Deployment)
 
 - [ ] 8.1 安裝 Railway CLI：`npm install -g @railway/cli`，執行 `railway login`
-- [ ] 8.2 在 Railway Dashboard 建立新專案，連結 **GitHub** 儲存庫（`asd23353934/hsin-third-party-transactions`）
-- [ ] 8.3 新增 PostgreSQL plugin，取得 `DATABASE_URL`
-- [ ] 8.4 在 Railway 環境變數設定所有 `.env.example` 中的值（all sensitive values are stored as environment variables）
-- [ ] 8.5 確認 `apps/api/railway.json` 的 build/start command 正確（API is deployable to Railway）
-- [ ] 8.6 推送至 `main` 分支觸發部署，確認 database migrations run automatically on deploy
+- [x] 8.2 在 Railway Dashboard 建立新專案，連結 **GitHub** 儲存庫（`asd23353934/hsin-third-party-transactions`）
+- [x] 8.3 新增 PostgreSQL plugin，取得 `DATABASE_URL`
+- [x] 8.4 在 Railway 環境變數設定所有 `.env.example` 中的值（all sensitive values are stored as environment variables）
+- [x] 8.5 確認 `apps/api/railway.json` 的 build/start command 正確（API is deployable to Railway）
+- [x] 8.6 推送至 `main` 分支觸發部署，確認 database migrations run automatically on deploy
 - [ ] 8.7 訪問 Railway 提供的 URL + `/health`，確認 API health check responds to Railway probes
 
 ## 9. 部署 — 前端到 Vercel (Frontend Deployment)
 
 - [ ] 9.1 安裝 Vercel CLI：`npm install -g vercel`，執行 `vercel login`
-- [ ] 9.2 在 `apps/payment-page/src/environments/environment.prod.ts` 更新 `apiUrl` 為 Railway URL
-- [ ] 9.3 在 `apps/admin/src/environments/environment.prod.ts` 更新 `apiUrl` 為 Railway URL
+- [x] 9.2 在 `apps/payment-page/src/environments/environment.prod.ts` 更新 `apiUrl` 為 Railway URL
+- [x] 9.3 在 `apps/admin/src/environments/environment.prod.ts` 更新 `apiUrl` 為 Railway URL
 - [ ] 9.4 執行 `vercel --cwd apps/payment-page --prod`，確認 frontend apps are deployable to Vercel
 - [ ] 9.5 執行 `vercel --cwd apps/admin --prod`
 - [ ] 9.6 確認 SPA routing is handled by rewrites：直接訪問 `https://<domain>/result` 不出現 404
