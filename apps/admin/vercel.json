@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run set-env && npm run build",
   "outputDirectory": "dist/admin/browser",
   "framework": null,
   "rewrites": [

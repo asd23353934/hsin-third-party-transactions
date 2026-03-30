@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "ng serve --port 4200",
+    "set-env": "node scripts/set-env.js",
     "build": "ng build --configuration production",
     "lint": "ng lint"
   },
