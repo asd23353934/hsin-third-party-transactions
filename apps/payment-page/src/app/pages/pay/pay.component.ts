@@ -136,11 +136,10 @@ export class PayComponent {
       .subscribe({
         next: (res) => {
           this.isLoading.set(false)
-          // Inject and auto-submit the payment form
-          this.paymentFormHtml.set(
-            this.sanitizer.bypassSecurityTrustHtml(res.data.paymentForm),
-          )
-          // The form auto-submits via onload in the HTML
+          // 直接用 document.write 替換整頁，讓 ECPay form onload 自動提交
+          document.open()
+          document.write(res.data.paymentForm)
+          document.close()
         },
         error: (err: { error?: { message?: string } }) => {
           this.isLoading.set(false)
