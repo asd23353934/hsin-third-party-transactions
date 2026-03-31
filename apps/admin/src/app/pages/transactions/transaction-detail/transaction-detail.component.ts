@@ -51,7 +51,7 @@ import {
 
             <div class="field">
               <label class="text-xs font-medium text-gray-500 uppercase tracking-wide">付款方式</label>
-              <p class="mt-1">{{ tx.gateway === 'ecpay' ? '綠界 ECPay' : '藍新 NewebPay' }}</p>
+              <p class="mt-1">綠界 ECPay</p>
             </div>
 
             <div class="field">

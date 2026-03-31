@@ -84,7 +84,7 @@ import {
           <tr>
             <td class="font-mono text-sm">{{ tx.order_ref }}</td>
             <td class="font-semibold">{{ tx.amount | number:'1.2-2' }} {{ tx.currency }}</td>
-            <td>{{ tx.gateway === 'ecpay' ? '綠界 ECPay' : '藍新 NewebPay' }}</td>
+            <td>綠界 ECPay</td>
             <td>
               <p-tag
                 [value]="getStatusLabel(tx.status)"
@@ -123,8 +123,7 @@ export class TransactionListComponent implements OnInit {
   }))
 
   readonly gatewayOptions = [
-    { label: '綠界 ECPay',    value: EnumPaymentGateway.ecpay },
-    { label: '藍新 NewebPay', value: EnumPaymentGateway.newebpay },
+    { label: '綠界 ECPay', value: EnumPaymentGateway.ecpay },
   ]
 
   ngOnInit(): void {

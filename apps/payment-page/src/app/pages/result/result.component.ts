@@ -57,17 +57,15 @@ export class ResultComponent implements OnInit {
 
   ngOnInit(): void {
     const params = this.route.snapshot.queryParamMap
-    // ECPay returns RtnCode=1 for success; NewebPay returns Status=SUCCESS
-    const rtnCode = params.get('RtnCode')
-    const status  = params.get('Status')
-    const orderRef = params.get('orderRef') ?? params.get('MerchantTradeNo') ?? params.get('MerchantOrderNo')
+    const rtnCode  = params.get('RtnCode')
+    const orderRef = params.get('orderRef') ?? params.get('MerchantTradeNo')
 
-    const success = rtnCode === '1' || status === 'SUCCESS'
+    const success = rtnCode === '1'
     this.isSuccess.set(success)
     this.orderRef.set(orderRef)
 
     if (!success) {
-      const msg = params.get('RtnMsg') ?? params.get('Message')
+      const msg = params.get('RtnMsg')
       if (msg) this.errorMessage.set(msg)
     }
   }

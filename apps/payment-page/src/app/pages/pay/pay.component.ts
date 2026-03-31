@@ -104,15 +104,14 @@ export class PayComponent {
 
   amount      = 0
   description = ''
-  gateway: 'ecpay' | 'newebpay' = 'ecpay'
+  gateway: 'ecpay' = 'ecpay'
 
   readonly isLoading      = signal(false)
   readonly errorMsg       = signal<string | null>(null)
   readonly paymentFormHtml = signal<SafeHtml>('')
 
   readonly gatewayOptions = [
-    { label: '綠界 ECPay',    value: 'ecpay'    as const },
-    { label: '藍新 NewebPay', value: 'newebpay' as const },
+    { label: '綠界 ECPay', value: 'ecpay' as const },
   ]
 
   submitPayment(): void {

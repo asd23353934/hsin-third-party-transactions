@@ -21,7 +21,7 @@ await app.register(cors, {
 })
 await app.register(sensible)
 
-// 解析 ECPay / NewebPay callback 的 application/x-www-form-urlencoded
+// 解析 ECPay callback 的 application/x-www-form-urlencoded
 app.addContentTypeParser(
   'application/x-www-form-urlencoded',
   { parseAs: 'string' },

@@ -9,8 +9,7 @@ export enum EnumTransactionStatus {
 }
 
 export enum EnumPaymentGateway {
-  ecpay    = 'ecpay',
-  newebpay = 'newebpay',
+  ecpay = 'ecpay',
 }
 
 export interface Transaction {

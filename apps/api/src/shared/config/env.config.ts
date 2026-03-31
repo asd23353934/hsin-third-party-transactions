@@ -17,10 +17,7 @@ const EnvSchema = z.object({
   ECPAY_HASH_IV:     z.string(),
   ECPAY_API_URL:     z.string().url(),
 
-  NEWEBPAY_MERCHANT_ID: z.string(),
-  NEWEBPAY_HASH_KEY:    z.string(),
-  NEWEBPAY_HASH_IV:     z.string(),
-  NEWEBPAY_API_URL:     z.string().url(),
+
 })
 
 export type Env = z.infer<typeof EnvSchema>

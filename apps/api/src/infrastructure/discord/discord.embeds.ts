@@ -19,8 +19,7 @@ interface DiscordWebhookBody {
 }
 
 const GATEWAY_LABELS: Record<string, string> = {
-  ecpay:    '綠界 ECPay',
-  newebpay: '藍新 NewebPay',
+  ecpay: '綠界 ECPay',
 }
 
 export function buildSuccessWebhookBody(event: TransactionSucceededEvent): DiscordWebhookBody {

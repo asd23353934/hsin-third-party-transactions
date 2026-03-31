@@ -7,7 +7,7 @@ export interface CreateTransactionRequest {
   orderRef:    string
   amount:      number
   currency:    string
-  gateway:     'ecpay' | 'newebpay'
+  gateway:     'ecpay'
   description: string
   returnUrl:   string
   notifyUrl:   string

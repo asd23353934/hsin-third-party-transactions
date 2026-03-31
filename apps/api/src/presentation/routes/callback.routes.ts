@@ -17,7 +17,7 @@ export async function callbackRoutes(
 
   /**
    * POST /api/callback/:gateway
-   * Receives payment callbacks from ECPay / NewebPay.
+   * Receives payment callbacks from ECPay.
    * MUST respond 200 immediately (gateways retry on non-200).
    */
   app.post<{ Params: { gateway: string }; Body: Record<string, unknown> }>(
@@ -34,7 +34,7 @@ export async function callbackRoutes(
       try {
         await options.prisma.paymentCallback.create({
           data: {
-            transaction_id: String(rawPayload['CustomField1'] ?? rawPayload['OrderComment'] ?? 'unknown'),
+            transaction_id: String(rawPayload['CustomField1'] ?? 'unknown'),
             raw_payload:    rawPayload as object,
             gateway,
           },
